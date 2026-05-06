@@ -14,7 +14,7 @@ export default function Home() {
     if (!code.trim()) { toast.error('Paste some code first'); return }
     setLoading(true)
     try {
-      const r = await axios.post('http://localhost:8000/api/review', { code, language })
+      const r = await axios.post('https://ai-code-xto9.onrender.com/api/review', { code, language })
       setResult(r.data.data)
     } catch (err) {
       toast.error(err.response?.data?.error || 'Review failed')
